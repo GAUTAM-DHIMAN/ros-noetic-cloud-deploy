@@ -1,0 +1,14 @@
+Instance Name: ROS-Noetic-Instance
+Instance ID: i-071fbec199c53205c
+Public IPv4: 13.53.144.71
+Private IPv4: 172.31.42.18
+AMI ID: ami-0c2a0ede9fd7cb37c
+Region: eu-north-1
+Availability Zone: eu-north-1b
+Instance Type: t3.micro
+Storage: 30 GB (gp2)
+Key Pair Name: ros-key.pem
+Security Group: launch-wizard-2
+Allowed Ports: SSH (22), HTTP (80), HTTPS (443)
+Operating System: Ubuntu 20.04 LTS (x86_64)
+Status: Running
