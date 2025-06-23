@@ -1,0 +1,30 @@
+# Connect to EC2 instance
+ssh -i ~/.ssh/ros-key.pem ubuntu@13.53.144.71
+
+# Set up ROS repository and keys
+sudo apt update
+sudo apt install curl -y
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+sudo apt update
+
+# Install ROS Noetic
+sudo apt install ros-noetic-desktop-full -y
+
+# Initialize and update rosdep
+sudo apt install python3-rosdep -y
+sudo rosdep init
+rosdep update
+
+# Source ROS in bashrc
+echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+
+# Run ROS core
+roscore
+
+# (Optional) Install turtlesim
+sudo apt install ros-noetic-turtlesim -y
+
+# (Optional) Run turtlesim
+rosrun turtlesim turtlesim_node
